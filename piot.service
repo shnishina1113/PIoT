@@ -1,0 +1,15 @@
+[Unit]
+Description = PIoT rfidsystem DATA acquisition
+After = network-online.target
+Wants = network-online.target
+
+[Service]
+#RemainAfterExit = yes
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+Restart = always
+#RestartSec = 15
+ExecStart = /opt/piot/PLC-LINK.py
+
+[Install]
+WantedBy = multi-user.target
